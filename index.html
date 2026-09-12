@@ -17,7 +17,7 @@ html, body {
     height: 100%;
     overflow: hidden;
     background: #050505;
-    color: #ffffff;
+    color: #ffffff !important;
     font-family: "Courier New", monospace;
 }
 
@@ -64,7 +64,6 @@ body {
 
 #header {
     position: fixed;
-
     top: 0;
     left: 0;
     right: 0;
@@ -85,18 +84,20 @@ body {
 
     box-shadow: 0 0 20px rgba(255,0,0,.25);
 
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 .logo {
     font-weight: bold;
     letter-spacing: 2px;
-    color: #ffffff;
+
+    color: #ffffff !important;
 }
 
 .status {
     font-size: 12px;
-    color: #ffffff;
+
+    color: #ffffff !important;
 }
 
 /* =====================================================
@@ -115,7 +116,7 @@ body {
 }
 
 /* =====================================================
-   JANELAS
+   JANELAS DA TELA TRASEIRA
    ===================================================== */
 
 .window {
@@ -129,7 +130,7 @@ body {
         0 0 15px rgba(255,0,0,.18),
         inset 0 0 20px rgba(255,0,0,.03);
 
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 .window-title {
@@ -147,7 +148,7 @@ body {
 
     font-size: 11px;
 
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 .buttons {
@@ -170,7 +171,7 @@ body {
     font-size: 11px;
     line-height: 1.55;
 
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 /* =====================================================
@@ -220,7 +221,7 @@ body {
 
     height: calc(100% - 30px);
 
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 .cursor {
@@ -256,7 +257,7 @@ body {
 
     margin-bottom: 4px;
 
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 .progress {
@@ -280,12 +281,10 @@ body {
     );
 
     box-shadow: 0 0 8px #ff0000;
-
-    transition: width .2s linear;
 }
 
 /* =====================================================
-   ALERTAS DO FUNDO
+   ALERTAS DA TELA TRASEIRA
    ===================================================== */
 
 .alert {
@@ -297,15 +296,16 @@ body {
 
     background: rgba(100,0,0,.12);
 
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 .alert strong {
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 /* =====================================================
    RETÂNGULO VERMELHO
+   FICA VISÍVEL DE 0s ATÉ 2s
    ===================================================== */
 
 #loginOverlay {
@@ -338,7 +338,7 @@ body {
 
     padding: 28px;
 
-    color: #ff3030;
+    color: #ff3030 !important;
 
     animation: loginPulse 1s infinite alternate;
 }
@@ -355,7 +355,7 @@ body {
 
     margin-bottom: 20px;
 
-    color: #ff3030;
+    color: #ff3030 !important;
 }
 
 .loginLine {
@@ -364,14 +364,14 @@ body {
 
     margin: 15px 0;
 
-    color: #ff3030;
+    color: #ff3030 !important;
 }
 
 .password {
 
     letter-spacing: 5px;
 
-    color: #ff3030;
+    color: #ff3030 !important;
 }
 
 @keyframes loginPulse {
@@ -396,6 +396,7 @@ body {
 
 /* =====================================================
    RETÂNGULO VERDE
+   APARECE AOS 2s E DURA ATÉ 3s
    ===================================================== */
 
 #ipOverlay {
@@ -428,7 +429,7 @@ body {
 
     padding: 30px;
 
-    color: #00ff41;
+    color: #00ff41 !important;
 
     text-align: center;
 
@@ -443,7 +444,7 @@ body {
 
     font-weight: bold;
 
-    color: #00ff41;
+    color: #00ff41 !important;
 }
 
 .ipAddress {
@@ -452,7 +453,7 @@ body {
 
     word-break: break-all;
 
-    color: #00ff41;
+    color: #00ff41 !important;
 }
 
 @keyframes greenPulse {
@@ -491,7 +492,7 @@ body {
 
     z-index: 500;
 
-    color: #ffffff;
+    color: #ffffff !important;
 
     align-items: center;
     justify-content: center;
@@ -555,6 +556,8 @@ body {
 
     .window-content {
         font-size: 9px;
+
+        color: #ffffff !important;
     }
 
     #loginBox {
@@ -563,22 +566,62 @@ body {
 
     .loginLine {
         font-size: 14px;
+
+        color: #ff3030 !important;
     }
 
     .ipAddress {
         font-size: 14px;
+
+        color: #00ff41 !important;
     }
 
 }
 
 /* =====================================================
-   JAVASCRIPT
+   GARANTIA FINAL DAS CORES
    ===================================================== */
+
+/* Tela traseira: BRANCO */
+
+#header *,
+#main .window *,
+#terminal,
+#systemWindow *,
+#processWindow *,
+#alertWindow * {
+    color: #ffffff !important;
+}
+
+/* Retângulo vermelho: VERMELHO */
+
+#loginOverlay *,
+#loginBox,
+#loginBox *,
+.loginTitle,
+.loginLine,
+.password {
+    color: #ff3030 !important;
+}
+
+/* Retângulo verde: VERDE */
+
+#ipOverlay *,
+#ipBox,
+#ipBox *,
+.ipTitle,
+.ipAddress {
+    color: #00ff41 !important;
+}
 
 </style>
 </head>
 
 <body>
+
+<!-- =====================================================
+     FUNDO
+     ===================================================== -->
 
 <div id="background"></div>
 
@@ -603,7 +646,7 @@ body {
 
 
 <!-- =====================================================
-     JANELAS PRINCIPAIS
+     ÁREA PRINCIPAL
      ===================================================== -->
 
 <div id="main">
@@ -618,9 +661,11 @@ body {
             TERMINAL / ROOT_SESSION
 
             <div class="buttons">
+
                 <span></span>
                 <span></span>
                 <span></span>
+
             </div>
 
         </div>
@@ -645,9 +690,11 @@ body {
             SYSTEM INFORMATION
 
             <div class="buttons">
+
                 <span></span>
                 <span></span>
                 <span></span>
+
             </div>
 
         </div>
@@ -669,6 +716,7 @@ body {
             <div class="alert">
 
                 <strong>WARNING</strong>
+
                 <br>
 
                 System monitoring active.
@@ -678,6 +726,7 @@ body {
             <div class="alert">
 
                 <strong>STATUS</strong>
+
                 <br>
 
                 Remote session synchronized.
@@ -698,9 +747,11 @@ body {
             ACTIVE PROCESSES
 
             <div class="buttons">
+
                 <span></span>
                 <span></span>
                 <span></span>
+
             </div>
 
         </div>
@@ -799,9 +850,11 @@ body {
             SECURITY MONITOR
 
             <div class="buttons">
+
                 <span></span>
                 <span></span>
                 <span></span>
+
             </div>
 
         </div>
@@ -861,7 +914,7 @@ body {
 
 <!-- =====================================================
      RETÂNGULO VERMELHO
-     DURA 2 SEGUNDOS
+     0s → 2s
      ===================================================== -->
 
 <div id="loginOverlay">
@@ -893,8 +946,7 @@ body {
 
 <!-- =====================================================
      RETÂNGULO VERDE
-     APARECE AOS 2 SEGUNDOS
-     E DURA 1 SEGUNDO
+     2s → 3s
      ===================================================== -->
 
 <div id="ipOverlay">
@@ -915,7 +967,7 @@ body {
 
 
 <!-- =====================================================
-     TELA DE ENCERRAMENTO
+     TELA FINAL
      ===================================================== -->
 
 <div id="closingScreen">
@@ -1078,6 +1130,11 @@ function progressBar(
 }
 
 
+/*
+   Os processos continuam rodando
+   visualmente no fundo.
+*/
+
 progressBar(
     "p1",
     "p1Text",
@@ -1104,15 +1161,22 @@ progressBar(
    SEQUÊNCIA DOS RETÂNGULOS
    =====================================================
 
-   0s → vermelho aparece
-   2s → verde aparece
-   3s → tudo termina
+   0s → vermelho
+   2s → verde
+   3s → encerramento
    ===================================================== */
 
 
-/* VERDE APARECE AOS 2 SEGUNDOS */
+/* =====================================================
+   AOS 2 SEGUNDOS:
+   ESCONDE VERMELHO E MOSTRA VERDE
+   ===================================================== */
 
 setTimeout(() => {
+
+    document
+        .getElementById("loginOverlay")
+        .style.display = "none";
 
     document
         .getElementById("ipOverlay")
@@ -1121,7 +1185,10 @@ setTimeout(() => {
 }, 2000);
 
 
-/* ENCERRA AOS 3 SEGUNDOS */
+/* =====================================================
+   AOS 3 SEGUNDOS:
+   ENCERRA A SIMULAÇÃO
+   ===================================================== */
 
 setTimeout(() => {
 
@@ -1144,10 +1211,12 @@ setTimeout(() => {
 
     /*
        O navegador normalmente bloqueia
-       window.close() quando a aba foi
+       window.close() em uma aba que foi
        aberta manualmente pelo usuário.
 
-       Ainda assim fazemos a tentativa.
+       Portanto, fazemos a tentativa,
+       mas não é possível garantir o
+       fechamento automático da aba.
     */
 
     setTimeout(() => {
